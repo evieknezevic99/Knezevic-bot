@@ -1250,7 +1250,7 @@ mentionedJid:[m.sender],
 "title": wm, 
 "containsAutoReply": true,
 "mediaType": 1, 
-sourceUrl: [nna, md, yt, nn, nnn].getRandom()}}
+sourceUrl: [nna, amix, md, yt, nn, nnn].getRandom()}}
 }, { quoted: m })
 // this.reply(m.chat, `🫥 𝙉𝙤 𝙩𝙞𝙚𝙣𝙚 𝙇𝙤𝙡𝙞𝘾𝙤𝙞𝙣𝙨`, m)
 continue     
@@ -1270,7 +1270,7 @@ mentionedJid:[m.sender],
 "title": wm, 
 "containsAutoReply": true,
 "mediaType": 1, 
-sourceUrl: [nna, md, yt, nn, nnn].getRandom()}}
+sourceUrl: [nna, amix, md, yt, nn, nnn].getRandom()}}
 }, { quoted: m })               
 //  this.reply(m.chat, `${lenguajeGB['smsCont7']()} *${usedPrefix}buy*`, m)
 continue // Limit habis
@@ -1289,7 +1289,7 @@ mentionedJid:[m.sender],
 "title": wm, 
 "containsAutoReply": true,
 "mediaType": 1, 
-sourceUrl: [nna, md, yt, nn, nnn].getRandom()}}
+sourceUrl: [nna, amix, md, yt, nn, nnn].getRandom()}}
 }, { quoted: m })                
 /*this.reply(m.chat, `${lenguajeGB['smsCont9']()} *${plugin.level}* ${lenguajeGB['smsCont10']()} *${_user.level}* ${lenguajeGB['smsCont11']()} *${usedPrefix}nivel*`, m)*/
 continue // If the level has not been reached
@@ -1437,7 +1437,7 @@ mentionedJid:[user],
 "title": [wm, ' ' + lb + ' 😊', '🌟'].getRandom(),
 "containsAutoReply": true,
 "mediaType": 1, 
-sourceUrl: [md, nna, yt, nnn, nn, ig].getRandom()}}}, { quoted: fkontak2 }) 
+sourceUrl: [md, nna, amix, yt, nnn, nn, ig].getRandom()}}}, { quoted: fkontak2 }) 
 //this.sendFile(id, apii.data, 'pp.jpg', text, null, false, { mentions: [user] }, { quoted: fkontak2 })
 }}}
 			    
