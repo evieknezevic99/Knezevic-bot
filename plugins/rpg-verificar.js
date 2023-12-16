@@ -46,8 +46,8 @@ mentionedJid:[m.sender],
 "title": `𝐑𝐄𝐆𝐈𝐒𝐓𝐑𝐎 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎`, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"mediaUrl": nnn, 
-"sourceUrl": nnn, 
+"mediaUrl": amix, 
+"sourceUrl": amix, 
 }
 }
 }, { quoted: fkontak })  
