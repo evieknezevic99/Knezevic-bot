@@ -105,7 +105,7 @@ global.md = 'https://github.com/evieknezevic99/Knezevic-bot'
 global.fb = 'https://www.facebook.com/groups/872989990425789/'
 
 global.nna = 'https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A' //Actualización, información sobre el bot
-global.amix = 'https://chat.whatsapp.com/DOsFkHylOjeFHETYZDM84s'
+global.amix = 'https://chat.whatsapp.com/DUI4YeudbVv6BPgvTCwOFN'
 global.nn = 'https://chat.whatsapp.com/C6sxsP2ckrr2vxMKclOeCD' //Grupo 1
 global.nnn = 'https://chat.whatsapp.com/H4hxytyGvucIF1k0UAR7es' //Grupo 2
 global.nnnt = 'https://chat.whatsapp.com/IlyJBy1fxcw2qAHLSC5YLa' //Grupo del Colaboracion
@@ -113,7 +113,7 @@ global.nnnt2 = 'https://chat.whatsapp.com/K7RzcVdxGqhGP5dCpVENSI' // Grupo COL 2
 global.nnntt = 'https://chat.whatsapp.com/IB9Vs7mZ03BBkH3reCU8Dw' //Grupo COL 3
 global.nnnttt = 'https://chat.whatsapp.com/KlqNmoUcVnsGJxIfATIDrK' //enlace lolibot
 global.nnntttt = 'https://chat.whatsapp.com/FRkr7jJHSJA5OjVtE64dDs' //Grupo ayuda sobre el bot
-global.nna2 = 'DOsFkHylOjeFHETYZDM84s'
+global.nna2 = 'DUI4YeudbVv6BPgvTCwOFN'
 global.asistencia = 'Wa.me/5492266466080' //Dudas? escríbeme...
 
 //⊱ ━━━━━━━━━━━━━.⋅ Datos ⋅.━━━━━━━━━━━━━━ ⊰
