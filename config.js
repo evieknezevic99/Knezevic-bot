@@ -100,9 +100,11 @@ global.author = '─̶̸͞𒁹̷̸̶̷᳟᳟࡙⃛̅╈⃝⃟🇧🇷𝐊ᯰ᤻�
 global.vs = '1.5.5 (Personalizados)'
 global.lb = '─̶̸͞𒁹̷̸̶̷᳟᳟࡙⃛̅╈⃝⃟🇧🇷𝐊ᯰ᤻᤻𝗡𝝨⃨ٓࠢࠜ𝖹𝗘̷̸̲̲̲V𝗜𝗖̸̷ 𝐁̶𝚯̸𝐓̸̷ '
 global.yt = 'https://www.youtube.com/@LoliBot'
+global.tiktok = 'tiktok.com/@elrebelde21'
 global.ig = 'https://instagram.com/_brightness.eyes'
 global.md = 'https://github.com/evieknezevic99/Knezevic-bot'
 global.fb = 'https://www.facebook.com/groups/872989990425789/'
+global.face = 'https://www.facebook.com/groups/872989990425789/'
 
 global.nna = 'https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A' //Actualización, información sobre el bot
 global.amix = 'https://chat.whatsapp.com/DUI4YeudbVv6BPgvTCwOFN'
