@@ -127,6 +127,8 @@ if (!isNumber(user.armormonster)) user.armormonster = 0
 if (!isNumber(user.as)) user.as = 0
 if (!isNumber(user.atm)) user.atm = 0
 if (!isNumber(user.axe)) user.axe = 0
+if (!isNumber(user.juegos)) user.juegos = 0
+if (!isNumber(user.crime)) user.crime = 0
 if (!isNumber(user.axedurability)) user.axedurability = 0
 if (!isNumber(user.ayam)) user.ayam = 0
 if (!isNumber(user.ayamb)) user.ayamb = 0
@@ -948,7 +950,7 @@ if (!('sWelcome' in chat)) chat.sWelcome = ''
 if (!('sBye' in chat)) chat.sBye = ''                    
 if (!('sPromote' in chat)) chat.sPromote = ''               
 if (!('sDemote' in chat)) chat.sDemote = ''              
-if (!('delete' in chat)) chat.delete = true                   
+if (!('delete' in chat)) chat.delete = false                 
 if (!('modohorny' in chat)) chat.modohorny = true       
 if (!('stickers' in chat)) chat.stickers = false               
 if (!('autosticker' in chat)) chat.autosticker = false       
@@ -962,6 +964,8 @@ if (!('antiTelegram' in chat)) chat.antiTelegram = false
 if (!('antiFacebook' in chat)) chat.antiFacebook = false
 if (!('antiInstagram' in chat)) chat.antiInstagram = false
 if (!('antiTwitter' in chat)) chat.antiInstagram = false
+if (!('game' in chat)) chat.game = true
+if (!('game2' in chat)) chat.game2 = true
 if (!('antifake' in chat)) chat.antifake = false
 if (!('reaction' in chat)) chat.reaction = true    
 if (!('viewonce' in chat)) chat.viewonce = false         
@@ -981,7 +985,7 @@ sWelcome: '',
 sBye: '',
 sPromote: '',
 sDemote: '', 
-delete: true,
+delete: false,
 modohorny: true,
 stickers: false, 
 autosticker: false,
@@ -995,6 +999,8 @@ antiTelegram: false,
 antiFacebook: false,
 antiInstagram: false,
 antiTwitter: false,
+game: true, 
+game2: true, 
 antifake: false,
 reaction: true,
 viewonce: false,
@@ -1017,6 +1023,8 @@ if (!('antiPrivate' in settings)) settings.antiPrivate = false
 if (!('antiCall' in settings)) settings.antiCall = true
 if (!('antiSpam' in settings)) settings.antiSpam = true
 if (!('antispam2' in settings)) settings.antispam2 = true
+if (!('solopv' in settings)) settings.solopv = false 
+if (!('sologp' in settings)) settings.sologp = false 
 if (!('jadibotmd' in settings)) settings.jadibotmd = true  
 } else global.db.data.settings[this.user.jid] = {
 self: false,
@@ -1028,27 +1036,17 @@ antiPrivate: false,
 antiCall: true,
 antiSpam: true,
 antispam2: true, 
+solopv: false, 
+sologp: false, 
 jadibotmd: true,
 }
 } catch (e) {
 console.error(e)
 }
-if (opts['nyimak'])
-return
-if (!m.fromMe && opts['self'])
-return
-if (opts['pconly'] && m.chat.endsWith('g.us'))
-return
-if (opts['gconly'] && !m.chat.endsWith('g.us'))
-return
-if (opts['swonly'] && m.chat !== 'status@broadcast')
-return
-if (typeof m.text !== 'string')
-m.text = ''
 
 const isROwner = [conn.decodeJid(global.conn.user.id), ...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
 const isOwner = isROwner || m.fromMe
- const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
 //const isPrems = isROwner || global.prems.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
 const isPrems = isROwner || global.db.data.users[m.sender].premiumTime > 0
 if (opts['queque'] && m.text && !(isMods || isPrems)) {
@@ -1060,6 +1058,15 @@ if (queque.indexOf(previousID) === -1) clearInterval(this)
 await delay(time)
 }, time)
 }
+
+if (opts['nyimak']) return
+if (!isROwner && opts['self']) return 
+if (opts['pconly'] && m.chat.endsWith('g.us')) return
+if (opts['gconly'] && !m.chat.endsWith('g.us')) return
+if (opts['swonly'] && m.chat !== 'status@broadcast') return
+if (typeof m.text !== 'string')
+m.text = ''
+
 if (m.isBaileys)
 return
 m.exp += Math.ceil(Math.random() * 10)
@@ -1090,6 +1097,7 @@ for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper 
 let data = (await conn.onWhatsApp(jid))[0] || {}
 //❌COMANDO FALLAS
 if (data.exists) 
+delay(2 * 2000)
 m.reply(`${lenguajeGB['smsCont1']()}\n\n${lenguajeGB['smsCont2']()}\n*_${name}_*\n\n${lenguajeGB['smsCont3']()}\n*_${m.sender}_*\n\n${lenguajeGB['smsCont4']()}\n*_${m.text}_*\n\n${lenguajeGB['smsCont5']()}\n\`\`\`${format(e)}\`\`\`\n\n${lenguajeGB['smsCont6']()}`.trim(), data.jid)
 }}}
 if (!opts['restrict'])
@@ -1157,9 +1165,10 @@ const messageNumber = user.bannedMessageCount + 1;
 const messageText = `⚠️ ESTAS BANEADO ⚠️\nAviso (${messageNumber}/3) ${user.bannedReason ? `\n*Motivo:* ${user.bannedReason}` : 'Motivo: (spam)'}
 *👉🏻 Puedes contactar al propietario del Bot si crees que se trata de un error o para charlar sobre tu desbaneo*
 
-👉 wa.me/5492266466080
-👉 Wa.me/573026191480
-👉 wa.me/595992302861`.trim();
+👉 ${ig}
+👉 Wa.me/595986172767
+👉 wa.me/595992302861
+👉 wa.me/5492266466080`.trim();
 m.reply(messageText);
 user.bannedMessageCount++;
 } else if (user.bannedMessageCount === 3) {
@@ -1170,29 +1179,18 @@ return;
 return;
 }
 		
-if (botSpam.antispam2 && m.text && user && user.lastCommandTime && (Date.now() - user.lastCommandTime) < 3000 && !isROwner) {
-if (user.commandCount === 2) {
-const remainingTime = Math.ceil((user.lastCommandTime + 3000 - Date.now()) / 1000);
-if (remainingTime > 0) {
-const messageText = `*𝙀𝙎𝙋𝙀𝙍𝘼 ${remainingTime} 𝙎𝙀𝙂𝙐𝙉𝘿𝙊 𝘼𝙉𝙏𝙀𝙎 𝘿𝙀 𝙐𝙎𝘼𝙍 𝙊𝙏𝙍𝙊 𝘾𝙊𝙈𝘼𝙉𝘿𝙊*`;
-//m.reply(messageText);
-return;
-} else {
-user.commandCount = 0;
+//Antispam		
+if (user.antispam2) return
+let time = global.db.data.users[m.sender].spam + 5000
+if (new Date - global.db.data.users[m.sender].spam < 5000) throw console.log(`[ SPAM ]`) 
+global.db.data.users[m.sender].spam = new Date * 1
 }
-} else {
-user.commandCount += 1;
-}
-} else {
-user.lastCommandTime = Date.now();
-user.commandCount = 1;
-}}
 
 let hl = _prefix 
 let adminMode = global.db.data.chats[m.chat].modoadmin
 let gata = `${plugins.botAdmin || plugins.admin || plugins.group || plugins || noPrefix || hl ||  m.text.slice(0, 1) == hl || plugins.command}`
 if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && gata) return   
-if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { // Both Owner
+if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { // Owner
 fail('owner', m, this)
 continue
 }
@@ -1237,60 +1235,18 @@ if (xp > 2000)
 m.reply('Exp limit') 
 else               
 if (!isPrems && plugin.money && global.db.data.users[m.sender].money < plugin.money * 1) {
-conn.sendMessage(m.chat, { 
-text: `🫥 𝙉𝙤 𝙩𝙞𝙚𝙣𝙚 𝙇𝙤𝙡𝙞𝘾𝙤𝙞𝙣𝙨`, 
-contextInfo:{
-forwardingScore: 9999999,
-isForwarded: true, 
-mentionedJid:[m.sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"thumbnail": gataImg.getRandom(), 
-"title": wm, 
-"containsAutoReply": true,
-"mediaType": 1, 
-sourceUrl: [nna, amix, md, yt, nn, nnn].getRandom()}}
-}, { quoted: m })
+conn.sendMessage(m.chat, {text: `🫥 𝙉𝙤 𝙩𝙞𝙚𝙣𝙚 𝙇𝙤𝙡𝙞𝘾𝙤𝙞𝙣𝙨`, contextInfo: {externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": `${lenguajeGB['smsAvisoAG']()}`, body: '𝐒𝐮𝐩𝐞𝐫 𝐁𝐨𝐭 𝐝𝐞 𝐖𝐡𝐚𝐭𝐬𝐚𝐩𝐩', previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [md, nna, nn, yt, ig, fb].getRandom()}}}, { quoted: m })       
 // this.reply(m.chat, `🫥 𝙉𝙤 𝙩𝙞𝙚𝙣𝙚 𝙇𝙤𝙡𝙞𝘾𝙤𝙞𝙣𝙨`, m)
 continue     
 }
 m.exp += xp
 if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-conn.sendMessage(m.chat, { 
-text: `*${lenguajeGB['smsCont7']()} *${usedPrefix}buy*`, 
-contextInfo:{
-forwardingScore: 9999999,
-isForwarded: true, 
-mentionedJid:[m.sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"thumbnail": gataImg.getRandom(), 
-"title": wm, 
-"containsAutoReply": true,
-"mediaType": 1, 
-sourceUrl: [nna, amix, md, yt, nn, nnn].getRandom()}}
-}, { quoted: m })               
-//  this.reply(m.chat, `${lenguajeGB['smsCont7']()} *${usedPrefix}buy*`, m)
+conn.sendMessage(m.chat, {text: `*${lenguajeGB['smsCont7']()} *${usedPrefix}buy*`,  contextInfo: {externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": `${lenguajeGB['smsAvisoAG']()}`, body: '𝐒𝐮𝐩𝐞𝐫 𝐁𝐨𝐭 𝐝𝐞 𝐖𝐡𝐚𝐭𝐬𝐚𝐩𝐩', previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [md, nna, nn, yt, ig, fb].getRandom()}}}, { quoted: m })       
+//this.reply(m.chat, `${lenguajeGB['smsCont7']()} *${usedPrefix}buy*`, m)
 continue // Limit habis
 }
 if (plugin.level > _user.level) {
-conn.sendMessage(m.chat, { 
-text: `${lenguajeGB['smsCont9']()} *${plugin.level}* ${lenguajeGB['smsCont10']()} *${_user.level}* ${lenguajeGB['smsCont11']()} *${usedPrefix}nivel*`, 
-contextInfo:{
-forwardingScore: 9999999,
-isForwarded: true, 
-mentionedJid:[m.sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"thumbnail": gataImg.getRandom(), 
-"title": wm, 
-"containsAutoReply": true,
-"mediaType": 1, 
-sourceUrl: [nna, amix, md, yt, nn, nnn].getRandom()}}
-}, { quoted: m })                
+conn.sendMessage(m.chat, {text: `${lenguajeGB['smsCont9']()} *${plugin.level}* ${lenguajeGB['smsCont10']()} *${_user.level}* ${lenguajeGB['smsCont11']()} *${usedPrefix}nivel*`,  contextInfo: {externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": `${lenguajeGB['smsAvisoAG']()}`, body: '𝐒𝐮𝐩𝐞𝐫 𝐁𝐨𝐭 𝐝𝐞 𝐖𝐡𝐚𝐭𝐬𝐚𝐩𝐩', previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [md, nna, nn, yt, ig, fb].getRandom()}}}, { quoted: m })                
 /*this.reply(m.chat, `${lenguajeGB['smsCont9']()} *${plugin.level}* ${lenguajeGB['smsCont10']()} *${_user.level}* ${lenguajeGB['smsCont11']()} *${usedPrefix}nivel*`, m)*/
 continue // If the level has not been reached
 }
@@ -1312,6 +1268,7 @@ if (e.name)
 for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
 let data = (await conn.onWhatsApp(jid))[0] || {}
 if (data.exists)
+delay(3 * 3000)
 m.reply(`${lenguajeGB['smsCont1']()}\n\n${lenguajeGB['smsCont2']()}\n*_${name}_*\n\n${lenguajeGB['smsCont3']()}\n*_${m.sender}_*\n\n${lenguajeGB['smsCont4']()}\n*_${m.text}_*\n\n${lenguajeGB['smsCont5']()}\n\`\`\`${format(e)}\`\`\`\n\n${lenguajeGB['smsCont6']()}`.trim(), data.jid)
 }
 m.reply(text)
@@ -1383,7 +1340,7 @@ if (opts['autoread']) await this.readMessages([m.key])
 if (settingsREAD.autoread2) await this.readMessages([m.key])  
 //if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])    
 if (!db.data.chats[m.chat].reaction && m.isGroup) throw 0
-if (!m.fromMem && m.text.match(/(@5492266466080|admin del bot|Bot|LoliBot|lolibot|The LoliBot-md|lolibot-md|The LoliBot-MD|:v)/gi)) {
+if (!m.fromMem && m.text.match(/(@5492266466080|LoliBot|Botsito|Gata|:v)/gi)) {
 let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "🖕", "🐦"])
 this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
 function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}}}
@@ -1434,10 +1391,10 @@ mentionedJid:[user],
 "showAdAttribution": true,
 "renderLargerThumbnail": true,
 "thumbnail": apii.data, 
-"title": [wm, ' ' + lb + ' 😊', '🌟'].getRandom(),
+"title": [wm, ' ' + wm + '😊', '🌟'].getRandom(),
 "containsAutoReply": true,
 "mediaType": 1, 
-sourceUrl: [md, nna, amix, yt, nnn, nn, ig].getRandom()}}}, { quoted: fkontak2 }) 
+sourceUrl: [md, nna, nn, yt, ig, fb].getRandom()}}}, { quoted: fkontak2 }) 
 //this.sendFile(id, apii.data, 'pp.jpg', text, null, false, { mentions: [user] }, { quoted: fkontak2 })
 }}}
 			    
@@ -1520,7 +1477,7 @@ restrict: lenguajeGB['smsRestrict'](),
 }[type]
 //if (msg) return m.reply(msg)
 let tg = { quoted: m, userJid: conn.user.jid }
-let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), body: [wm, ' ' + lb + ' 😊', '🌟'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, nna, yt, nnn, nn, fb, ig].getRandom() }}}}, tg)
+let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), body: [wm, ' ' + wm + ' 😊', '🌟'].getRandom(), thumbnail: img.getRandom(), sourceUrl: [md, nna, nn, yt, ig, fb].getRandom() }}}}, tg)
 if (msg) return conn.relayMessage(m.chat, prep.message, { messageId: prep.key.id })
 }
 
