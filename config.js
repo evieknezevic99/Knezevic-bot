@@ -116,7 +116,7 @@ global.nnntttt = 'https://chat.whatsapp.com/FRkr7jJHSJA5OjVtE64dDs' //Grupo ayud
 global.nna2 = 'DUI4YeudbVv6BPgvTCwOFN'
 global.asistencia = 'Wa.me/5492266466080' //Dudas? escríbeme...
 global.bot = 'Wa.me/573247130979'
-global.redes = [nna, yt, ig, md, nn]
+global.redes = [nna, yt, ig, md, fb, nn]
 
 //⊱ ━━━━━━━━━━━━━.⋅ Datos ⋅.━━━━━━━━━━━━━━ ⊰
 
@@ -173,10 +173,9 @@ global.img15 = 'https://i.imgur.com/5cofHE5.jpeg'
 global.img16 = 'https://i.imgur.com/11MRjo4.jpeg' //+18
 global.img17 = 'https://i.imgur.com/JpYfcH0.jpeg'
 global.redesMenu = [nna, nn, nnn, nnnt, nnntt, nnnttt, nnntttt, md, ig, lb, fb, yt]
-global.prueba = [nna, amix]
 global.gataMenu = [img, img2, img6, img7, img8, img9, img13, img14, img15, img16]
 global.gataVidMenu = ['https://a.uguu.se/RqbiXfNg.mp4', 'https://a.uguu.se/uoZBfOyV.mp4', './media/menus/Menuvid1.mp4']
-global.img = [imagen, imagen1, imagen2, imagen3, imagen4, imagen5, imagen6]
+global.img = [imagen1, imagen2, imagen3]
 
 //⊱ ━━━━━.⋅ RPG ⋅.━━━━ ⊰
 
