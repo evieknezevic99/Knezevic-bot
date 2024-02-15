@@ -1,38 +1,366 @@
-import { createHash } from 'crypto'
-let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
-let handler = async function (m, { conn, text, usedPrefix, command }) {
-let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
-  let user = db.data.users[m.sender]
-let totalreg = Object.keys(global.db.data.users).length
-let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
-  let name2 = conn.getName(m.sender)
-  if (user.registered === true) throw `𝙔𝙖 𝙚𝙨𝙩𝙖 𝙧𝙚𝙜𝙞𝙨𝙩𝙧𝙖𝙙𝙤 🤨`
-  if (!Reg.test(text)) throw `${mg}✳️ 𝙐𝙨𝙤 𝙚𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤: *${usedPrefix + command} nombre.edad*\n📌𝙀𝙟𝙚𝙢𝙥𝙡𝙤 : *${usedPrefix + command}* ${name2}.16`
-  let [_, name, splitter, age] = text.match(Reg)
-  if (!name) throw '✳️ 𝐄𝐥. 𝐧𝐨𝐦𝐛𝐫𝐞 𝐧𝐨 𝐩𝐮𝐞𝐝𝐞 𝐞𝐬𝐭𝐚𝐫 𝐯𝐚𝐜𝐢𝐨'
-  if (!age) throw '✳️ 𝐋𝐚 𝐞𝐝𝐚𝐝 𝐧𝐨 𝐩𝐮𝐞𝐝𝐞 𝐞𝐬𝐭𝐚 𝐯𝐚𝐜𝐢𝐚'
-  if (name.length >= 30) throw '✳️ 𝐅𝐮𝐚𝐚𝐚, 𝐪𝐮𝐞 𝐧𝐨𝐦𝐛𝐫𝐞 𝐭𝐚𝐥 𝐥𝐚𝐫𝐠𝐨𝐨𝐨𝐨𝐨' 
-  age = parseInt(age)
-  if (age > 100) throw '👴🏻 𝐏𝐚 𝐞𝐬𝐭𝐚 𝐯𝐢𝐞𝐣𝐨𝐬'
-  if (age < 5) throw '🚼  𝐕𝐫𝐠 𝐥𝐨𝐬 𝐛𝐞𝐛𝐞𝐬 𝐬𝐚𝐛𝐞𝐧 𝐞𝐬𝐜𝐫𝐢𝐛𝐢𝐫? ✍️😳 '
-  user.name = name.trim()
-  user.age = age
-  user.regTime = + new Date
-  user.registered = true
-global.db.data.users[m.sender].money += 400
-global.db.data.users[m.sender].limit += 4
-global.db.data.users[m.sender].exp += 150
-global.db.data.users[m.sender].joincount += 2
-  let sn = createHash('md5').update(m.sender).digest('hex')
-  await conn.reply(m.chat,  `━━〔 *𝐑𝐄𝐆𝐈𝐒𝐓𝐑𝐎 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎* 〕━━
+const handler = async (m, {conn, usedPrefix, command, args, isOwner, isAdmin, isROwner}) => {
+const optionsFull = `*━━⪻ ＡＣＴＩＶＡＲ / ＤＥＳＡＣＴＩＶＡＲ ⪼━━━*
 
-დ *𝐍𝐨𝐦𝐛𝐫𝐞:* ${name}
-დ *𝐄𝐝𝐚𝐝:* ${age} años
+* ${usedPrefix + command} welcome
+* Activa o desactiva la bienvenida en el grupo.
 
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-*დ 𝐓𝐨𝐭𝐚𝐥 𝐝𝐞 𝐮𝐬𝐮𝐚𝐫𝐢𝐨𝐬 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐝𝐨𝐬:* ${rtotalreg}`, fkontak, {contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: `𝐑𝐄𝐆𝐈𝐒𝐓𝐑𝐎 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎`, body: '', previewType: 0, thumbnail: img.getRandom(), sourceUrl: redes.getRandom()}}})
-await m.reply(`${sn}`)}
-handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>')
-handler.tags = ['xp']
-handler.command = /^(verify|verificar|registrar|reg(ister)?)$/i
-export default handler
+* ${usedPrefix + command}  public
+* El bot se vuelve de uso publico y/o privado.
+
+* ${usedPrefix + command} antilink
+* Activa o desactiva el anti-enlaces de WhatsApp.
+
+* ${usedPrefix + command} antilink2
+* Activa o desactiva el anti-enlaces que inician en HTTPS.
+
+* ${usedPrefix + command} detect
+* Activa o desacriva las notificaciones de cambios en el grupo.
+
+* ${usedPrefix + command} detect2
+* Detecta modificaciones en el grupo y mantiene una mejor gestion.
+
+* ${usedPrefix + command} restrict
+* Activa o desactiva las restricciones del Bot, como la de sacar o agregar personas a un grupo.
+
+* ${usedPrefix + command} autoread
+* Marca como leido los mensajes y los estados automáticamente.
+
+* ${usedPrefix + command} pconly
+* El Bot solo responderá a los comandos si es un chat privado.
+
+* ${usedPrefix + command} gconly
+* El Bot solo respondera a los comandos si es un grupo.
+ 
+* ${usedPrefix + command} antiviewonce
+* Las imagenes enviadas para ver solo una vez, son reenviadas normal por el Bot. 
+
+* ${usedPrefix + command} anticall
+* El Bot bloquerá a las personas que llamen al Bot. 
+
+* ${usedPrefix + command} antitoxic
+* Detecta la malas palabras y advierte al participante del grupo, antes de ser eliminado.
+
+* ${usedPrefix + command} antitraba
+* El Bot detecta textos largos que podrian ser virus y causar lag en el chat y elimina al usuario.
+
+* ${usedPrefix + command} antiarabes
+* Si un numero árabe se uné al grupo, el Bot lo elimina automaticamente.
+
+* ${usedPrefix + command} modoadmin
+* El bot solo responderá a los mensajes enviados por los admins. del grupo.
+
+* ${usedPrefix + command} simsimi
+* El bot empezará a responder a los mensajes usando la IA de SimSimi.
+
+* ${usedPrefix + command} antidelete
+* El bot detecta cuando un usuario elimina un mensaje y lo reenvía.
+
+* ${usedPrefix + command} modoia
+* Se activa el modo "Inteligencia Artificial" con ChatGPT en todos los chats privados.
+
+* ${usedPrefix + command} antiprivado
+* El Bot bloquerá a las personas que escriban al privado del Bot.`.trim();
+
+  const isEnable = /true|enable|(turn)?on|1/i.test(command);
+  const chat = global.db.data.chats[m.chat];
+  const user = global.db.data.users[m.sender];
+  const bot = global.db.data.settings[conn.user.jid] || {};
+  const type = (args[0] || '').toLowerCase();
+  let isAll = false; const isUser = false;
+  switch (type) {
+    case 'welcome':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn);
+          throw false;
+        }
+      } else if (!(isAdmin || isOwner || isROwner)) {
+        global.dfail('admin', m, conn);
+        throw false;
+      }
+      chat.welcome = isEnable;
+      break;
+    case 'detect':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn);
+          throw false;
+        }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn);
+        throw false;
+      }
+      chat.detect = isEnable;
+      break;
+    case 'detect2':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn);
+          throw false;
+        }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn);
+        throw false;
+      }
+      chat.detect2 = isEnable;
+      break;
+    case 'simsimi':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.simi = isEnable;
+      break;
+    case 'antiporno':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiporno = isEnable;
+      break;
+    case 'delete':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.delete = isEnable;
+      break;
+    case 'antidelete':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antidelete = isEnable;
+      break;
+    case 'public':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['self'] = !isEnable;
+      break;
+    case 'antilink':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiLink = isEnable;
+      break;
+    case 'antilink2':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiLink2 = isEnable;
+      break;
+    case 'antiviewonce':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiviewonce = isEnable;
+      break;
+    case 'modohorny':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.modohorny = isEnable;
+      break;
+    case 'modoadmin':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.modoadmin = isEnable;
+      break;
+    case 'autosticker':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.autosticker = isEnable;
+      break;
+    case 'audios':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.audios = isEnable;
+      break;
+    case 'restrict':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.restrict = isEnable;
+      break;
+    case 'audios_bot':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.audios_bot = isEnable;      
+      break;
+    case 'modoia':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.modoia = isEnable;      
+      break;      
+    case 'nyimak':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['nyimak'] = isEnable;
+      break;
+    case 'autoread':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      bot.autoread2 = isEnable;
+      //global.opts['autoread'] = isEnable;
+      break;
+    case 'pconly':
+    case 'privateonly':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['pconly'] = isEnable;
+      break;
+    case 'gconly':
+    case 'grouponly':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['gconly'] = isEnable;
+      break;
+    case 'swonly':
+    case 'statusonly':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['swonly'] = isEnable;
+      break;
+    case 'anticall':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.antiCall = isEnable;
+      break;
+    case 'antiprivado':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.antiPrivate = isEnable;
+      break;
+    case 'modejadibot':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      bot.modejadibot = isEnable;
+      break;
+    case 'antispam':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.antispam = isEnable;
+      break;
+    case 'antitoxic':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiToxic = isEnable;
+      break;
+      case 'game': case 'juegos': case 'fun': case 'ruleta':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.game = isEnable          
+break;
+    case 'antitraba':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiTraba = isEnable;
+      break;
+    case 'antiarabes':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn); 
+          throw false;
+        }
+      }
+      chat.antiArab = isEnable;
+      break;
+    case 'antiarabes2':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiArab2 = isEnable;
+      break;
+    default:
+      if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, {text: optionsFull}, {quoted: m});
+      throw false;
+  }
+  conn.sendMessage(m.chat, {text: `_*< FUNCIONES DEL BOT />*_\n\n*[ ℹ️ ] La opción* _${type}_ *fue* ${isEnable ? '_activada_' : '_desactivada_'} *exitosamente para este* ${isAll ? '_bot._' : isUser ? '' : '_chat._'}`}, {quoted: m});
+  //conn.sendMessage(m.chat, {text: `▢ *Opción:* ${type}\n\n▢ *Estado:* ${isEnable ? 'Activado' : 'Desactivado'}\n\n▢ *Para* ${isAll ? 'este bot' : isUser ? '' : 'este chat'}`}, {quoted: m});
+};
+handler.command = /^((en|dis)able|(tru|fals)e|(turn)?[01])$/i;
+export default handler;

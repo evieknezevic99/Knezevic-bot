@@ -612,7 +612,6 @@ body: '', previewType: 0, thumbnail: imagen4, sourceUrl: [nna, nn, md, yt].getRa
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
-handler.register = true
 export default handler
 
 const more = String.fromCharCode(8206)
