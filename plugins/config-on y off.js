@@ -359,7 +359,13 @@ break;
       if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, {text: optionsFull}, {quoted: m});
       throw false;
   }
-  conn.sendMessage(m.chat, {text: `*LA OPCIÓN:* _${type}_ *FUR* ${isEnable ? '[ ✅ ACTIVADA ]' : '[ ❌ DESACTIVADA ]'} *EXITOSAMENTE PARA ESTE* ${isAll ? 'BOT' : isUser ? '' : 'CHAT'}`}, {quoted: m});
+  conn.sendMessage(m.chat, {text: `╭┄〔 *${wm}* 〕┄⊱
+┆🗂️ ᴏᴘᴄɪᴏɴ: ${type} 
+┆——————«•»——————
+┆🎚️ ᴇsᴛᴀᴅᴏ: ${isEnable ? 'ᴀᴄᴛɪᴠᴀᴅᴏ' : 'ᴅᴇsᴀᴄᴛɪᴠᴀᴅᴏ'}
+┆——————«•»——————
+┆📣 ᴘᴀʀᴀ: ${isAll ? 'ᴇsᴛᴇ ʙᴏᴛ' : isUser ? '' : 'ᴇsᴛᴇ ᴄʜᴀᴛ'} 
+╰━━━⊰ 𓃠 ${vs} ⊱━━━━დ`}, {quoted: m});
   //conn.sendMessage(m.chat, {text: `▢ *Opción:* ${type}\n\n▢ *Estado:* ${isEnable ? 'Activado' : 'Desactivado'}\n\n▢ *Para* ${isAll ? 'este bot' : isUser ? '' : 'este chat'}`}, {quoted: m});
 };
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?[01])$/i;
