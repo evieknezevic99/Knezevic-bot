@@ -77,7 +77,7 @@ let menu = `⧼⧼⧼ 💖 ${wm} 💖 ⧽⧽⧽
 
 *Hola ${taguser} como esta 👋*
 
-\`ᰔᩚ Creadora:\` Kiara
+\`ᰔᩚ Creadora:\` Evie Knezevic
 \`ᰔᩚ Instagram de la Creadora :\` 
 ${ig}
 \`ᰔᩚ Tiempos activos :\` ${uptime}
