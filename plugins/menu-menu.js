@@ -96,10 +96,10 @@ ${readMore}
 ┃ᰔᩚ _${usedPrefix}infobot_
 ┃ᰔᩚ _${usedPrefix}grupos_
 ┃ᰔᩚ _${usedPrefix}estado_
-┃ᰔᩚ _${usedPrefix}status
+┃ᰔᩚ _${usedPrefix}status_
 ┃ᰔᩚ _${usedPrefix}ping_
 ┃ᰔᩚ _${usedPrefix}enable_
-┃ᰔᩚ _${usedPrefix}reporte
+┃ᰔᩚ _${usedPrefix}reporte_
 ┋━━━━━━ ⧼⧼⧼ 💖 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀 📥 ⧽⧽⧽ 
 ┃ᰔᩚ _${usedPrefix}play *<texto>*_
 ┃ᰔᩚ _${usedPrefix}playdoc *<texto>*_
@@ -118,12 +118,12 @@ ${readMore}
 ┃ᰔᩚ _${usedPrefix}igstalk *<nombre de usuario>*_
 ┋━━━━━━ ⧼⧼⧼ 💖 𝐁𝐔𝐒𝐂𝐀𝐃𝐎𝐑𝐄𝐒 🔍 ⧽⧽⧽
 ┃ᰔᩚ _${usedPrefix}google *<texto>*_
-┃ᰔᩚ _${usedPrefix}chatgpt
-┃ᰔᩚ _${usedPrefix}ia
+┃ᰔᩚ _${usedPrefix}chatgpt_
+┃ᰔᩚ _${usedPrefix}ia_
 ┋━━━━━━ ⧼⧼⧼ 💖 𝐒𝐓𝐈𝐂𝐊𝐄𝐑𝐒 👽 ⧽⧽⧽
 ┃ᰔᩚ _${usedPrefix}sticker *<responder a imagen o video>*_
-┃ᰔᩚ _${usedPrefix}qc
-┃ᰔᩚ _${usedPrefix}attp *<texto>*
+┃ᰔᩚ _${usedPrefix}qc_
+┃ᰔᩚ _${usedPrefix}attp *<texto>*_
 ┃ᰔᩚ _${usedPrefix}wm *<packname> <author>*_
 ┋━━━━━━ ⧼⧼⧼ 💖𝐆𝐄𝐒𝐓𝐈𝐎𝐍 𝐆𝐑𝐔𝐏𝐎💎⧽⧽⧽ 
 ┃ᰔᩚ _${usedPrefix}add *<numero>*_
@@ -144,8 +144,7 @@ ${readMore}
 ┃ᰔ _${usedPrefix}bc *<texto>*_
 ┃ᰔ _${usedPrefix}restart_
 ┃ᰔ _${usedPrefix}update_
-┃ᰔ _${usedPrefix}addcmd *<texto> <responder a sticker/imagen>*_
-┃ᰔ _${usedPrefix}delcmd *<responder a sticker/imagen con comando o texto asignado>*_
+┃ᰔ _${usedPrefix}addcmd_
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━`.trim()
 conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: {mentionedJid, externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: wm, body: '𝐒𝐮𝐩𝐞𝐫 𝐁𝐨𝐭 𝐃𝐞 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩', previewType: 0, thumbnail: imagen4, sourceUrl: [md, yt, tiktok].getRandom()}}})
 	 
