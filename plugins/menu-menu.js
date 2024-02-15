@@ -103,44 +103,27 @@ ${readMore}
 ┃ᰔᩚ _${usedPrefix}reporte
 ┋━━━━━━ ⧼⧼⧼ 💖 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀 📥 ⧽⧽⧽ 
 ┃ᰔᩚ _${usedPrefix}play *<texto>*_
-┃ᰔᩚ _${usedPrefix}play.1 *<texto>*_
-┃ᰔᩚ _${usedPrefix}play.2 *<texto>*_
 ┃ᰔᩚ _${usedPrefix}playdoc *<texto>*_
 ┃ᰔᩚ _${usedPrefix}playlist *<texto>*_
 ┃ᰔᩚ _${usedPrefix}spotify *<texto>*_
 ┃ᰔᩚ _${usedPrefix}tiktok *<enlace / link / url>*_
 ┃ᰔᩚ _${usedPrefix}instagram *<enlace / link / url>*_
-┃ᰔᩚ _${usedPrefix}mediafire *<enlace / link / url>*_
-┃ᰔᩚ _${usedPrefix}instagram *<enlace / link / url>*_
 ┃ᰔᩚ _${usedPrefix}gitclone *<enlace / link / url>*_
 ┃ᰔᩚ _${usedPrefix}gdrive *<enlace / link / url>*_
 ┃ᰔᩚ _${usedPrefix}twitter *<enlace / link / url>*_
-┃ᰔᩚ _${usedPrefix}fb *<enlace / link / url>*_
 ┃ᰔᩚ _${usedPrefix}ytmp3 *<enlace / link / url>*_
 ┃ᰔᩚ _${usedPrefix}ytmp4 *<enlace / link / url>*_
-┃ᰔᩚ _${usedPrefix}ytmp3doc *<enlace / link / url>*_
-┃ᰔᩚ _${usedPrefix}ytmp4doc *<enlace / link / url>*_
-┃ᰔᩚ _${usedPrefix}stickerpack *<enlace / link / url>*_
 ┃ᰔᩚ _${usedPrefix}stickerly *<texto>*_
 ┃ᰔᩚ _${usedPrefix}imagen *<texto>*_
 ┃ᰔᩚ _${usedPrefix}pinteret *<texto>*_
-┃ᰔᩚ _${usedPrefix}wallpaper *<texto>*_
-┃ᰔᩚ _${usedPrefix}pptiktok *<nombre de usuario>*_
 ┃ᰔᩚ _${usedPrefix}igstalk *<nombre de usuario>*_
-┃ᰔᩚ _${usedPrefix}igstory *<nombre de usuario>*_
-┃ᰔᩚ _${usedPrefix}tiktokstalk *<username>*_
 ┋━━━━━━ ⧼⧼⧼ 💖 𝐁𝐔𝐒𝐂𝐀𝐃𝐎𝐑𝐄𝐒 🔍 ⧽⧽⧽
-┃ᰔᩚ _${usedPrefix}stickersearch *<texto>*_
 ┃ᰔᩚ _${usedPrefix}google *<texto>*_
 ┃ᰔᩚ _${usedPrefix}chatgpt
 ┃ᰔᩚ _${usedPrefix}ia
-┃ᰔᩚ _${usedPrefix}letra *<texto>*_
-┃ᰔᩚ _${usedPrefix}wikipedia *<texto>*_
-┃ᰔᩚ _${usedPrefix}ytsearch *<texto>*_
 ┋━━━━━━ ⧼⧼⧼ 💖 𝐒𝐓𝐈𝐂𝐊𝐄𝐑𝐒 👽 ⧽⧽⧽
 ┃ᰔᩚ _${usedPrefix}sticker *<responder a imagen o video>*_
 ┃ᰔᩚ _${usedPrefix}qc
-┃ᰔᩚ _${usedPrefix}emojimix *<emoji 1>&<emoji 2>*
 ┃ᰔᩚ _${usedPrefix}attp *<texto>*
 ┃ᰔᩚ _${usedPrefix}wm *<packname> <author>*_
 ┋━━━━━━ ⧼⧼⧼ 💖𝐆𝐄𝐒𝐓𝐈𝐎𝐍 𝐆𝐑𝐔𝐏𝐎💎⧽⧽⧽ 
@@ -149,55 +132,19 @@ ${readMore}
 ┃ᰔᩚ _${usedPrefix}grupo *<abrir / cerrar>*_
 ┃ᰔᩚ _${usedPrefix}promote *<@tag>*_
 ┃ᰔᩚ _${usedPrefix}demote *<@tag>*_
-┃ᰔᩚ _admins *<texto>*_ (𝑢𝑠𝑜 𝑠𝑖𝑛 𝑝𝑟𝑒𝑓𝑖𝑗𝑜)
-┃ᰔᩚ _${usedPrefix}demote *<@tag>*_
-┃ᰔᩚ _${usedPrefix}infogroup_
-┃ᰔᩚ _${usedPrefix}resetlink_
 ┃ᰔᩚ _${usedPrefix}link_
-┃ᰔᩚ _${usedPrefix}setname *<texto>*_
-┃ᰔᩚ _${usedPrefix}setdesc *<texto>*_
-┃ᰔᩚ _${usedPrefix}invocar *<texto>*_
-┃ᰔᩚ _${usedPrefix}hidetag *<texto>*_
-┃ᰔᩚ _${usedPrefix}warn *<@tag>*_
-┃ᰔᩚ _${usedPrefix}unwarn *<@tag>*_
-┃ᰔᩚ _${usedPrefix}listwarn_
-┃ᰔᩚ _${usedPrefix}fantasmas_
-┃ᰔ _${usedPrefix}setpp *<imagen>*_
-┋━━━━━━ ⧼⧼⧼ 👑 𝐒𝐎𝐋𝐎 𝐊𝐈𝐀𝐑𝐀 💖 ⧽⧽⧽ 
-┃ᰔ > *<funcion>*
-┃ᰔ => *<funcion>*
-┃ᰔ $ *<funcion>*
-┃ᰔ _${usedPrefix}setprefix *<prefijo>*_
-┃ᰔ _${usedPrefix}resetprefix_
+┋━ ⧼⧼⧼ 👑 𝐒𝐎𝐋𝐎 𝐏𝐀𝐑𝐀 ─̶̸͞𒁹̷̸̶̷᳟᳟࡙⃛̅╈⃝⃟🇧🇷𝐊ᯰ᤻᤻𝗡𝝨⃨ٓࠢࠜ𝖹𝗘̷̸̸̷ 💖 ⧽⧽⧽ 
 ┃ᰔ _${usedPrefix}autoadmin_
 ┃ᰔ _${usedPrefix}leavegc_
-┃ᰔ _${usedPrefix}cajafuerte_
-┃ᰔ _${usedPrefix}blocklist_
 ┃ᰔ _${usedPrefix}block *<@tag / numero>*_
 ┃ᰔ _${usedPrefix}unblock *<@tag / numero>*_
-┃ᰔ _${usedPrefix}enable *restrict*_
-┃ᰔ _${usedPrefix}disable *restrict*_
-┃ᰔ _${usedPrefix}enable *autoread*_
-┃ᰔ _${usedPrefix}disable *autoread*_
-┃ᰔ _${usedPrefix}enable *anticall*_
-┃ᰔ _${usedPrefix}disable *anticall*_
-┃ᰔ _${usedPrefix}enable *antiprivado*_
-┃ᰔ _${usedPrefix}disable *antiprivado*_
-┃ᰔ _${usedPrefix}msg *<texto>*_
 ┃ᰔ _${usedPrefix}banchat_
 ┃ᰔ _${usedPrefix}unbanchat_
 ┃ᰔ _${usedPrefix}banuser *<@tag>*_
 ┃ᰔ _${usedPrefix}unbanuser *<@tag>*_
-┃ᰔ _${usedPrefix}banuser *<@tag>*_
 ┃ᰔ _${usedPrefix}bc *<texto>*_
-┃ᰔ _${usedPrefix}bcchats *<texto>*_
-┃ᰔ _${usedPrefix}bcgc *<texto>*_
-┃ᰔ _${usedPrefix}bcbot *<texto>*_
-┃ᰔ _${usedPrefix}cleartpm_
 ┃ᰔ _${usedPrefix}restart_
 ┃ᰔ _${usedPrefix}update_
-┃ᰔ _${usedPrefix}listcmd_
-┃ᰔ _${usedPrefix}setppbot *<responder a imagen>*_
 ┃ᰔ _${usedPrefix}addcmd *<texto> <responder a sticker/imagen>*_
 ┃ᰔ _${usedPrefix}delcmd *<responder a sticker/imagen con comando o texto asignado>*_
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━`.trim()
