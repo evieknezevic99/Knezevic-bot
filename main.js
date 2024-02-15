@@ -293,8 +293,8 @@ conn.ev.off('connection.update', conn.connectionUpdate);
 conn.ev.off('creds.update', conn.credsUpdate);
 }
 
-conn.welcome = '*━━⪻ ＷＥＬＣＯＭＥ ⪼━━━*\n\nᰔᩚ Bienvenido @user 👋\n\n*━━⪻ @subject ⪼━━━*\n\nㅤ𒌋ㅤㅤㅤ𝖋𝖨𝐂𝖧𐤠ㅤㅤㅤ•ㅤㅤㅤ𝑑꯭𝑒\nㅤㅤ▬ㅤㅤㅤㅤ#𝕻𝖱𝖤𝗦𝖤𝖭𝗧𝖠𝕮𝖨Ó𝖭\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤ𝗇𝗼𝗺𝖻𝗋𝖾 𝖼𝗈𝗺𝗉𝗅𝖾𝘁𝗼\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤ𝗋𝗼𝗅 𝗊𝗎𝖾 𝗼𝗰𝘂𝗽𝗮𝗿𝗮𝘀\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤ𝗌𝖾𝗋𝗮𝗌 𝖿𝗶𝖾𝗅 𝖺 𝗹𝖺 𝖿𝖺𝗺𝗂𝗅𝗂𝖺 \nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤ ݃╱..🇧🇷ㅤ|ㅤㅤ𝖼𝖺𝗿𝗂𝗍𝖺 𝗊𝘂𝖾 𝗈𝖼𝗎𝗉𝖺𝗋𝗮𝘀\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤO.𝗦 / 𝖤.𝗖\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤ𝗁𝖺𝖻𝗂𝗅𝗶𝖽𝗮𝗱𝗲𝘀\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃|ㅤㅤ𝖿𝗼𝗍𝗈 𝗈 𝗏𝗂𝗱𝖾𝗈 𝖽𝖾𝗅 𝗂𝖽𝗼𝗹\n               𝗢𝗕𝗟𝗜𝗚𝗔𝗧𝗢𝗥𝗜𝗢\n\n𝐔𝐒𝐀𝐑 𝐋𝐎𝐒 # 𝐃𝐄 𝐋𝐀 𝐅𝐀𝐌𝐈𝐋𝐈𝐀 \n#familyknezevic🇧🇷\n#knezevicpavedtheway🇧🇷\n#Knezevicfamily🇧🇷\n#thefamilyknezevic🇧🇷\n#jackdominaelmundo🇧🇷';
-  conn.bye = '*━━⪻ ＡＤＩＯＳ ⪼━━━*\n\n👋 ¡Hasta luego!\n@user';
+conn.welcome = 'Bienvenido/a @user\n\nㅤㅤ𒌋ㅤㅤㅤ𝖋𝖨𝐂𝖧𐤠ㅤㅤㅤ•ㅤㅤㅤ𝑑꯭𝑒\nㅤㅤ▬ㅤㅤㅤㅤ#𝕻𝖱𝖤𝗦𝖤𝖭𝗧𝖠𝕮𝖨Ó𝖭\n\nㅤㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤ𝗇𝗼𝗺𝖻𝗋𝖾 𝖼𝗈𝗺𝗉𝗅𝖾𝘁𝗼\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤ𝗋𝗼𝗅 𝗊𝗎𝖾 𝗼𝗰𝘂𝗽𝗮𝗿𝗮𝘀\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤ𝗌𝖾𝗋𝗮𝗌 𝖿𝗶𝖾𝗅 𝖺 𝗹𝖺 𝖿𝖺𝗺𝗂𝗅𝗂𝖺 \nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤ𝖼𝖺𝗿𝗂𝗍𝖺 𝗊𝘂𝖾 𝗈𝖼𝗎𝗉𝖺𝗋𝗮𝘀\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤO.𝗦 / 𝖤.𝗖\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\nㅤㅤ݃╱..🇧🇷ㅤ|ㅤㅤ𝗁𝖺𝖻𝗂𝗅𝗶𝖽𝗮𝗱𝗲𝘀\nㅤㅤ𝓬͟𝓲͟𝓼͟           ‎ ▋ㅤHERE\n\n\nㅤㅤ݃|ㅤㅤ𝖿𝗼𝗍𝗈 𝗈 𝗏𝗂𝗱𝖾𝗈 𝖽𝖾𝗅 𝗂𝖽𝗼𝗹\n               𝗢𝗕𝗟𝗜𝗚𝗔𝗧𝗢𝗥𝗜𝗢\n\n\n𝐔𝐒𝐀𝐑 𝐋𝐎𝐒 # 𝐃𝐄 𝐋𝐀 𝐅𝐀𝐌𝐈𝐋𝐈𝐀\n#familyknezevic🇧🇷\n#knezevicpavedtheway🇧🇷\n#Knezevicfamily🇧🇷\n#thefamilyknezevic🇧🇷\n#jackdominaelmundo🇧🇷';
+  conn.bye = '*━━⪻ ＡＤＩＯＳ ⪼━━━*\n\nSe fue @user 👋';
   conn.spromote = '*@user 𝐀𝐡𝐨𝐫𝐚 𝐞𝐫𝐞𝐬 𝐩𝐚𝐫𝐭𝐞 𝐝𝐞𝐥 𝐬𝐭𝐚𝐟𝐟, 𝐟𝐞𝐥𝐢𝐜𝐢𝐝𝐚𝐝𝐞𝐬 🥳.*';
   conn.sdemote = '*@user 𝐘𝐚 𝐧𝐨 𝐞𝐫𝐞𝐬 𝐮𝐧 𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐝𝐨 🥲*';
   conn.sDesc = '*𝐋𝐀 𝐃𝐄𝐒𝐂𝐑𝐈𝐂𝐈𝐎𝐍 𝐅𝐔𝐄 𝐂𝐀𝐌𝐁𝐈𝐀𝐃𝐀 𝐀.*';
