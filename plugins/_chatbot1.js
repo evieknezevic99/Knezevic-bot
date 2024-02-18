@@ -2,7 +2,7 @@ import moment from 'moment-timezone'
   
 export async function before(m) {
 
-if (m.chat.endsWith('broadcast') || m.fromMe) return
+if (m.chat.endsWith('broadcast') || m.fromMe || m.isGroup) return
   
 let user = global.db.data.users[m.sender]
 const usuario = `@${m.sender.split`@`[0]}`;
