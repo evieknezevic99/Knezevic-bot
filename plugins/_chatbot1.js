@@ -11,7 +11,7 @@ await conn.reply(m.chat, `${ucapan()} ${usuario} si desea seguir usando el servi
 
 ──   𝗟𝗔𝗗𝗬  ﹙🇧🇷.̸ ﹚𝐄𝗩𝗜𝗘   @   𝗞𝗡𝖤𝗭𝗘𝗩𝖨𝗖
 
-https://instagram.com/_brightness.eyes`, m, {contextInfo: {mentions: [m.sender], externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: wm, body: '﹙🇧🇷.̸ ﹚𝐄𝗩𝗜𝗘   @   𝗞𝗡𝖤𝗭𝗘𝗩𝖨𝗖', previewType: 0, thumbnail: img.getRandom(), sourceUrl: redes.getRandom()}}})
+https://instagram.com/_brightness.eyes`, m, {contextInfo: {mentionedJid: [m.sender], externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: wm, body: '﹙🇧🇷.̸ ﹚𝐄𝗩𝗜𝗘   @   𝗞𝗡𝖤𝗭𝗘𝗩𝖨𝗖', previewType: 0, thumbnail: img.getRandom(), sourceUrl: redes.getRandom()}}})
 
 
 user.pc = new Date * 1
