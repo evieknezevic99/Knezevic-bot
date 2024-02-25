@@ -11,10 +11,10 @@ let rtotalreg = Object.values(global.db.data.users).filter(user => user.register
   let [_, name, splitter, age] = text.match(Reg)
   if (!name) throw '✳️ 𝐄𝐥. 𝐧𝐨𝐦𝐛𝐫𝐞 𝐧𝐨 𝐩𝐮𝐞𝐝𝐞 𝐞𝐬𝐭𝐚𝐫 𝐯𝐚𝐜𝐢𝐨'
   if (!age) throw '✳️ 𝐋𝐚 𝐞𝐝𝐚𝐝 𝐧𝐨 𝐩𝐮𝐞𝐝𝐞 𝐞𝐬𝐭𝐚 𝐯𝐚𝐜𝐢𝐚'
-  if (name.length >= 30) throw '✳️ 𝐅𝐮𝐚𝐚𝐚, 𝐪𝐮𝐞 𝐧𝐨𝐦𝐛𝐫𝐞 𝐭𝐚𝐥 𝐥𝐚𝐫𝐠𝐨𝐨𝐨𝐨𝐨' 
+  if (name.length >= 80) throw '✳️ 𝐅𝐮𝐚𝐚𝐚, 𝐪𝐮𝐞 𝐧𝐨𝐦𝐛𝐫𝐞 𝐭𝐚𝐥 𝐥𝐚𝐫𝐠𝐨𝐨𝐨𝐨𝐨' 
   age = parseInt(age)
   if (age > 100) throw '👴🏻 𝐏𝐚 𝐞𝐬𝐭𝐚 𝐯𝐢𝐞𝐣𝐨𝐬'
-  if (age < 5) throw '🚼  𝐕𝐫𝐠 𝐥𝐨𝐬 𝐛𝐞𝐛𝐞𝐬 𝐬𝐚𝐛𝐞𝐧 𝐞𝐬𝐜𝐫𝐢𝐛𝐢𝐫? ✍️😳 '
+  if (age < 3) throw '🚼  𝐕𝐫𝐠 𝐥𝐨𝐬 𝐛𝐞𝐛𝐞𝐬 𝐬𝐚𝐛𝐞𝐧 𝐞𝐬𝐜𝐫𝐢𝐛𝐢𝐫? ✍️😳 '
   user.name = name.trim()
   user.age = age
   user.regTime = + new Date
