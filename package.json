@@ -1,6 +1,6 @@
 {
-"name": "GataBot-MD",
-"version": "1.7.0", 
+"name": "KnezevicBot-MD",
+"version": "1.5.0 (personalizado)", 
 "description": "Super Bot WhatsApp",
 "main": "index.js",
 "type": "module",
@@ -17,16 +17,16 @@
 "test": "node test.js",
 "test2": "nodemon index.js" },
     
-"homepage": "https://github.com/GataNina-Li/GataBot-MD",
+"homepage": "https://github.com/evieknezevic99/Knezevic-bot",
 "author": {
-"name": "GataNina-Li" },
+"name": "evieknezevic99" },
     
 "repository": {
 "type": "git",
-"url": "git+https://github.com/GataNina-Li/GataBot-MD.git" },
+"url": "git+https://github.com/evieknezevic99/Knezevic-bot.git" },
 
 "bugs": {
-"url": "https://github.com/GataNina-Li/GataBot-MD/issues" },
+"url": "https://github.com/evieknezevic99/Knezevic-bot/issues" },
 "license": "GPL-3.0-or-later",
 "dependencies": {
 "@whiskeysockets/baileys": "^6.6.0",
